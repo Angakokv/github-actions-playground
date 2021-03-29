@@ -11,8 +11,12 @@ module.exports = {
         'overwrite=true',
         'inline=true',
         'charts=true',
-        `reportPageTitle=${process.env.SUITE_NAME.toUpperCase()}`,
-        `reportTitle=${process.env.SUITE_NAME.toUpperCase()} Results`,
+        'reportDir=./report',
+        `reportPageTitle=${process.env.SUITE_NAME.toUpperCase()} #${process.env.GITHUB_RUN_NUMBER} ` +
+            `${process.env.GITHUB_RUN_ID}`,
+        `reportTitle=${process.env.SUITE_NAME.toUpperCase()} Results ` +
+            `(${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/` +
+            `${process.env.GITHUB_RUN_ID})`,
         `reportFilename=${process.env.SUITE_NAME.toUpperCase()}_Report`,
         `timestamp=${(new Date()).toISOString().slice(0, 19)}`
     ],
