@@ -33,3 +33,12 @@ jobs:
         name: "Test report ${{ github.workflow }} #${{ github.run_number }} ${{ github.run_id }}"
         path: report
         retention-days: 14
+    - name: Deploy report to GitHub pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./report
+        exclude_assets: './report/*.json'
+        destination_dir: report
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
