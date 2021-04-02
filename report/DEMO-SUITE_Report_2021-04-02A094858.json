@@ -1,0 +1,209 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-04-02T09:48:58.726Z",
+    "end": "2021-04-02T09:49:02.715Z",
+    "duration": 3989,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13855005-8a21-44af-b22d-3ce3093b8377",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+          "title": "User searches something on Google",
+          "fullFile": "/home/runner/work/github-actions-playground/github-actions-playground/test/demo-suite/search.spec.js",
+          "file": "/test/demo-suite/search.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"User searches something on Google\"",
+              "fullTitle": "User searches something on Google \"before all\" hook in \"User searches something on Google\"",
+              "timedOut": false,
+              "duration": 2143,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser = await puppeteer.launch(puppeteerConfig.launchOptions);\npage = await browser.newPage();",
+              "err": {},
+              "uuid": "f1349551-50ec-4b82-aef5-43ebfe9c8257",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"User searches something on Google\"",
+              "fullTitle": "User searches something on Google \"after all\" hook in \"User searches something on Google\"",
+              "timedOut": false,
+              "duration": 59,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await browser.close();",
+              "err": {},
+              "uuid": "d602c2fa-2330-4462-97a1-c1dd69d955a0",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Navigate to the Google page",
+              "fullTitle": "User searches something on Google Navigate to the Google page",
+              "timedOut": false,
+              "duration": 1521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await page.goto(appConfig.baseUrl, { waitUntil: 'networkidle0' })",
+              "err": {},
+              "uuid": "7cfd465b-3cff-4446-8c23-81e3e9fe76f8",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Input search criteria",
+              "fullTitle": "User searches something on Google Input search criteria",
+              "timedOut": false,
+              "duration": 250,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchInputElementHandle = await page.waitForSelector('input[name=q]', { visible: true });\nawait searchInputElementHandle.type('test123', { delay: 10 });",
+              "err": {},
+              "uuid": "7a7a32e3-e3e4-4f20-af46-eb7c0fb99abc",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Hit Enter key",
+              "fullTitle": "User searches something on Google Hit Enter key",
+              "timedOut": false,
+              "duration": 7,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await searchInputElementHandle.press('Enter');",
+              "err": {},
+              "uuid": "6ccc7aff-d2df-4004-a3c0-6d2853bb1348",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fails",
+              "fullTitle": "User searches something on Google should fails",
+              "timedOut": false,
+              "duration": 2,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "expect(true).to.be.false;",
+              "err": {
+                "message": "AssertionError: expected true to be false",
+                "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (test/demo-suite/search.spec.js:29:27)\n    at processImmediate (internal/timers.js:461:21)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "905b5144-a903-4b64-96cb-b473c6a564f1",
+              "parentUUID": "e6fc9123-b779-48e4-ad13-2e49145e11a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7cfd465b-3cff-4446-8c23-81e3e9fe76f8",
+            "7a7a32e3-e3e4-4f20-af46-eb7c0fb99abc",
+            "6ccc7aff-d2df-4004-a3c0-6d2853bb1348"
+          ],
+          "failures": [
+            "905b5144-a903-4b64-96cb-b473c6a564f1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1780,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.3.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "DEMO-SUITE_Report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "overwrite": "true",
+        "inline": "true",
+        "charts": "true",
+        "reportDir": "./report",
+        "reportPageTitle": "DEMO-SUITE #18 711316881",
+        "reportTitle": "DEMO-SUITE Results (https://github.com/Angakokv/github-actions-playground/actions/runs/711316881)",
+        "reportFilename": "DEMO-SUITE_Report",
+        "timestamp": "2021-04-02T09:48:58"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
